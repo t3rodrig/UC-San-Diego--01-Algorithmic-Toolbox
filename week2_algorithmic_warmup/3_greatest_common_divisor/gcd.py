@@ -10,6 +10,15 @@ def gcd_naive(a, b):
     return current_gcd
 
 
+def gcd_euclid(a, b):
+    if b == 0:
+        return a
+
+    a %= b
+
+    return gcd_euclid(b, a)
+
+
 if __name__ == "__main__":
     a, b = map(int, input().split())
-    print(gcd_naive(a, b))
+    print(gcd_euclid(a, b))
